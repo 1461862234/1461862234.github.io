@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Hello World!
 categories: [dbyll]
 tags: [dbyll]
