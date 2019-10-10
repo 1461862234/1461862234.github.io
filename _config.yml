@@ -23,27 +23,27 @@ sass:
 # Site Data
 url: # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: # the subpath of your site, e.g. /blog
-title: ZH's Pocket 
-description: "Zhenghui Lee's weblog"
-keywords: 'technology,blog'
+title: 左遇
+description: "左遇的个人博客"
+keywords: 'technology,blog,netty'
 author:
-  name: Zhenghui Lee
-  job_title: Software Architect
+  name: 左遇
+  job_title: Software Engineer
   location:
-  email: leezhenghui@gmail.com
+  email: 1461862234@qq.com
   social_links:
     - name: facebook
-      url: https://www.facebook.com/zhenghui.li.94
+      url: 
     - name: github
-      url: https://github.com/leezhenghui
+      url: https://github.com/1461862234
     - name: instagram
       url:
     - name: linkedin
-      url: https://linkedin.com/in/zhenghui-lee-8a318729 
+      url: 
     - name: stackoverflow
       url:
     - name: twitter
-      url: https://twitter.com/zhenghui_lee 
+      url: 
     - name: vk
       url:
 home:
