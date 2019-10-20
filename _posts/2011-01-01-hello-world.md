@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hello World!"
+title: "JAVA I/O模型介绍!"
 description: "Netty 入门"
 categories: [io]
 tags: [io]
@@ -28,7 +28,7 @@ redirect_from:
     LongBuffer：长整形缓冲区\
     FloatBuffer： 浮点型缓冲区\
     DoubleBuffer：双精度浮点型缓冲区
-    #### 通道 Channel
+     #### 通道 Channel
     > Channel是要给通道，网络数据通过Channel读取和写入，通道与流不同之处在于通道是双向的，而流只在一个方向移动，必须是input或者output，而通道却可以读、写或者读写同时进行。NIO中主要使用ServerSocketChannel和 SocketChannel两个类
 
     #### 多路复用器 Selector
