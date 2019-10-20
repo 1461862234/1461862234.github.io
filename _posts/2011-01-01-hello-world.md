@@ -21,7 +21,7 @@ redirect_from:
   * 非阻塞I/O NIO
     > NIO指的是Non-block I/O，是在JDK 1.4中引入的，弥补了原来同步阻塞IO的不足，客户端发起的连接操作是异步的，不会阻塞后续的客户端请求，只需要向多路复用器注册OP_CONNECT，等待后续结果即可。JDK的Selector在linux等主流服务器上通过epoll实现，没有链接句柄的限制，意味着一个Selector线程可以同时处理成千上万客户端连接，并且性能不会随着客户端的增加而线性下降。因此，NIO非常适合做高性能、高负载的网络服务器。
     
-    #### 缓冲区buffer ####
+    **缓冲区 Buffer**
     > 在NIO的类库中加入了Buffer对象，这是新库与BIO的一个重要区别，在NIO库中，所有的数据都是缓冲区处理的，在读取数据时，它是直接读到缓冲区中的；在写入数据时，也是写入到缓冲区中，他的本质是一个数组，通常是一个字节数组（ButeBuffer），实时上，每一种java基本类型都对应了一种病缓冲区，具体如下：
     >> * ByteBuffer：字节缓冲区
     >> *  CharBuffer：字符缓冲区
@@ -30,10 +30,10 @@ redirect_from:
     >> * LongBuffer：长整形缓冲区
     >> * FloatBuffer： 浮点型缓冲区 
 
-    #### 通道 Channel ####
+    **通道 Channel**
     > Channel是要给通道，网络数据通过Channel读取和写入，通道与流不同之处在于通道是双向的，而流只在一个方向移动，必须是input或者output，而通道却可以读、写或者读写同时进行。NIO中主要使用ServerSocketChannel和 SocketChannel两个类
     
-    #### 多路复用器 Selector ####
+    **多路复用器 Selector** 
     > Selector会不断轮询注册在其上面的Channel，如果Channel发生读或者写的事件，这个Channel就会处于就绪状态，会被Selector检测出来，通过SelectionKey获取就绪的Channel集合，进行后续的I/O操作。一个Selector可以同属轮询多个Channel，由于JDK底层使用了epoll代替了select，所以并没有最大连接句柄1024/2048的限制，这也意味着一个Selector可以介入成千上万的客户端。
 
      > 主要使用的类库：ServerSockChannel、SocketChannel、Selector。
