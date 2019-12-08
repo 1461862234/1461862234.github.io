@@ -9,8 +9,8 @@ redirect_from:
 ---
 # MessagePack
 ### 简介
-> MessagePack 是一个搞笑的二进制序列化宽街概念，它像JSON一样支持不同语言的数据交换，但是他的性能更快，序列化之后的码流也更小，在业界得到了非常广泛的应用。MessagePack的特点如下：
-> * 编解码搞笑，性能高。
+> MessagePack 是一个高效的二进制序列化框架，它像JSON一样支持不同语言的数据交换，但是他的性能更快，序列化之后的码流也更小，在业界得到了非常广泛的应用。MessagePack的特点如下：
+> * 编解码高效，性能高。
 > * 序列化之后的码流小。
 > * 支持跨语言。
 
@@ -34,7 +34,7 @@ redirect_from:
 ```
 #### API编码解码代码
 
-``` Java
+``` java
 // Create serialize objects.
 List<String> src = new ArrayList<String>();
 src.add("msgpack");
@@ -72,7 +72,7 @@ System.out.println(dst2.get(2));
 
 ### 编码器代码
 
-``` Java
+``` java
 package io.netty.handler.coder.msgpack;
 
 import org.msgpack.MessagePack;
@@ -98,7 +98,7 @@ public class MsgPackEncoder extends MessageToByteEncoder<Object>{
 
 ### 解码器代码
 
-``` Java
+``` java
 package io.netty.handler.coder.msgpack;
 
 import java.util.List;
@@ -131,8 +131,8 @@ public class MsgPackDecoder extends MessageToMessageDecoder<ByteBuf>{
 
 > 我们可以使用Netty提供的LengthFieldPrepender和LengthFieldBasedFrameDecoder来结合新开发的MessagePack编解码框架，来实现TCP粘包/半包的支持。使用方法跟之前介绍的使用方法一样，在initChannel方法中，将这两个类加入，MsgpackDecoder接收到的就永远是整包消息了。
 
-##### 代码日下
-``` Java
+##### 代码如下
+``` java
 protected void initChannel(SocketChannel ch) throws Exception {
 	//LengthFieldBasedFrameDecoder用于处理半包消息
 	//这样后面的MsgpackDecoder接收的永远是整包消息
